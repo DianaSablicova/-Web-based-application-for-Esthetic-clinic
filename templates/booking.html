@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book an Appointment</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+{% block title %}
+    Booking
+{% endblock %}
+
+{% block main %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <body>
+        <h1 class="booking">Appointment Calendar</h1>
+        <form method="GET">
+            <label for="date" class="date">Select Date:</label>
+            <input type="date" name="date" value="{{ selected_date }}">
+            <input type="submit" value="Show Availability">
+        </form>
+        <table class="availability-table">
+            <thead>
+                <tr>
+                    <th class="time-header">Time</th>
+                    <th class="status-header">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hour in range(8, 18) %}
+                    <tr>
+                        <td class="time-slot">{{ hour }}:00 - {{ hour+1 }}:00</td>
+                        <td class="status-cell">
+                            {% set time_slot = "%02d:00"|format(hour) %}
+                            {% if time_slot in booked_times %}
+                                <span class="booked">Booked</span>
+                            {% else %}
+                                <span class="available">Available</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h1 class="booking">Book an Appointment</h1>
+        <div class="booking-form">
+            <form id="booking-form" method="POST" action="/book">
+                <label for="name">Name:</label>
+                <input type="text" name="name" required>
+
+                <label for="date">Date:</label>
+                <input type="date" name="date" required><br><br>
+
+
+                <label for="treatments">Treatments:</label>
+                <select  name="treatments" required>
+                    <option value="Cosmetology">Cosmetology</option>
+                    <option value="Body">Body Treatments</option>
+                    <option value="Breast Implants">Breast Implants</option>
+                    <option value="Botox and Fillers">Botox and Fillers</option>
+                    <option value="Lasering">Lasering</option>
+                    <option value="Face plastic surgeries">Face plastic surgeries</option>
+                    </select>
+
+
+
+                <label for="time">Time:</label>
+                <select name="time" required>
+                    <option value="08:00">8:00 AM</option>
+                    <option value="09:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                    <option value="18:00">6:00 PM</option>
+                </select><br><br>
+
+                <input type="submit" class="book_appointment" value="Book Appointment">
+            </form>
+        </div>
+
+        <script>
+            // JavaScript code for updating the calendar on form submission
+            $(document).ready(function () {
+                $("#booking-form").submit(function (event) {
+                    event.preventDefault();
+                    var formData = $(this).serialize();
+                    $.post("/book", formData, function (data) {
+                        if (data.success) {
+                            var calendar = $("#calendar");
+                            var newAppointment = $("<div></div>")
+                                .text(data.appointmentDate + " " + data.appointmentTime)
+                                .addClass("booked");
+                            calendar.append(newAppointment);
+                            }
+                        });
+                    });
+                });
+
+        </script>
+    </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<div class="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+        <div class="text-contact">
+            <p>Jazdecka 44</p>
+            <p>831 03 Bratislava</p>
+            <p>Slovensko</p>
+            <br>
+            <p>4. floor: operative tract and client's room</p>
+            <p>5. floor: reception and ambulance</p>
+        </div>
+        <div class="img-contact">
+            <img src="{{ url_for('static', filename='contact.webp') }}" alt="contact">
+        </div>
+    </div>
+</div>
+<h2>YOU CAN FIND US HERE:</h2>
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2660.925621613256!2d17.13157877581742!3d48.16951474893803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8eb9c96db1af%3A0xac0c75e8a94c1f63!2sJazdeck%C3%A1%2C%20831%2003%20Bratislava!5e0!3m2!1ssk!2ssk!4v1696701365551!5m2!1ssk!2ssk" width="660" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+
+
+{% endblock %}

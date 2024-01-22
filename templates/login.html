@@ -1,0 +1,24 @@
+
+
+{% extends "layout.html" %}
+
+
+{% block title %}
+    Log in
+{% endblock %}
+
+{% block main %}
+
+    <div>
+        <h1 class="log">To book your appointment you must be log in</h1>
+        <form action="/login" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="email" name="email" placeholder="Email" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+            </div>
+            <button class="btn btn-primary" type="submit">Log in</button>
+        </form>
+    </div>
+{% endblock %}

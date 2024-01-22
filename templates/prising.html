@@ -1,0 +1,143 @@
+<link href="/static/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
+{% extends "layout.html" %}
+
+{% block title %}
+  prising
+{% endblock %}
+
+{% block main %}
+<h2 class="pop">Prising list</h2>
+    <body>
+        <section class="container">
+            <div class="pricing-tables">
+                <div class="block">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <ul class="pricing">
+                           <li>
+                            <h4>Cosmetology</h4>
+                            </li>
+                                <li> <img src="{{ url_for('static', filename='cosmetology.jpg') }}" alt="Cosmetology"></li>
+                                <li>Enhances Personal Beauty</li>
+                                <li>Boosts Self-Esteem</li>
+                                <li>Relaxing Self-Care</li>
+                                <li>Improve Skin Condition</li>
+                            <li>
+                                 <h3>50-€</h3>
+                            </li>
+                            <li>
+                                <a href="/booking">
+                                <button>Book now</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <ul class="pricing">
+                            <li>
+                            <h4>Body procedures</h4>
+                            </li>
+                                <li><img src="{{ url_for('static', filename='body.jpg') }}" alt="Body"></li>
+                                <li>Enhances Physical Form</li>
+                                <li>Restores Body Confidence</li>
+                                <li>Body Rejuvenation</li>
+                                <li>Customized Aesthetic Solutions</li>
+                            <li>
+                                 <h3>100-€</h3>
+                            </li>
+                            <li>
+                                <a href="/booking">
+                                    <button>Book now</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <ul class="pricing">
+                            <li>
+                            <h4>Breast Implants</h4>
+                            </li>
+                                <li><img src="{{ url_for('static', filename='breast.jpg') }}" alt="Breast Implants"></li>
+                                <li>Enhances Bust Size</li>
+                                <li>Improves Body Proportions</li>
+                                <li>Enhances Feminine Curves</li>
+                                <li>Boosts Self-Image</li>
+                            <li>
+                                 <h3>From 1090-€</h3>
+                            </li>
+                            <li>
+                                <a href="/booking">
+                                    <button>Book now</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <ul class="pricing">
+                            <li>
+                            <h4>Botox and Fillers</h4>
+                            </li>
+                                <li><img src="{{ url_for('static', filename='botox.webp') }}" alt="Botox and Fillers"></li>
+                                <li>Smoothes Wrinkles</li>
+                                <li>Restores Youthful Appearance</li>
+                                <li>Facial Rejuvenation</li>
+                                <li>Minimizes Fine Lines</li>
+                            <li>
+                                 <h3>From 35-€</h3>
+                            </li>
+                            <li>
+                                <a href="/booking">
+                                    <button>Book now</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <ul class="pricing">
+                          <li>
+                            <h4>Lasering</h4>
+                            </li>
+                                <li><img src="{{ url_for('static', filename='lasering.jpg') }}" alt="Lasering"></li>
+                                <li>Revitalizes Skin</li>
+                                <li>Removes Imperfections</li>
+                                <li>Enhances Skin Texture</li>
+                                <li>Painless Precision Treatment</li>
+                            <li>
+                                 <h3>50-€</h3>
+                            </li>
+                            <li>
+                                <a href="/booking">
+                                    <button>Book now</button>
+                                 </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <ul class="pricing">
+                            <li>
+                            <h4>Face plastic surgeries</h4>
+                            </li>
+                                <li><img src="{{ url_for('static', filename='plastic.png') }}" alt="Face Plastic Surgeries"></li>
+                                <li>Transforms Facial Features</li>
+                                <li>Rejuvenates Youthful Look</li>
+                                <li>Enhances Facial Harmony</li>
+                                <li>Boosts Confidence</li>
+                            <li>
+                                 <h3>From 950-€</h3>
+                            </li>
+                            <li>
+                                <a href="/booking">
+                                    <button>Book now</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+{% endblock %}
+

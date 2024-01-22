@@ -1,0 +1,45 @@
+<link href="/static/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap" rel="stylesheet">
+{% extends "layout.html" %}
+
+{% block title %}
+  treatments
+{% endblock %}
+
+{% block main %}
+<!--<link href="/static/style.css" rel="stylesheet">//
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Procedure Gallery</title>
+    </head>-->
+
+<h2>Available Procedures</h2>
+        <div class="procedure-container">
+            <div class="procedure">
+                <img src="{{ url_for('static', filename='cosmetology.jpg') }}" alt="Cosmetology">
+                <p>Cosmetology</p>
+            </div>
+            <div class="procedure">
+                <img src="{{ url_for('static', filename='body.jpg') }}" alt="Body">
+                <p>Body</p>
+            </div>
+            <div class="procedure">
+                <img src="{{ url_for('static', filename='breast.jpg') }}" alt="Breast Implants">
+                <p>Breast Implants</p>
+            </div>
+            <div class="procedure">
+                <img src="{{ url_for('static', filename='botox.webp') }}" alt="Botox and Fillers">
+                <p>Botox and Fillers</p>
+            </div>
+            <div class="procedure">
+                <img src="{{ url_for('static', filename='lasering.jpg') }}" alt="Lasering">
+                <p>Lasering</p>
+            </div>
+            <div class="procedure">
+                <img src="{{ url_for('static', filename='plastic.png') }}" alt="Face Plastic Surgeries">
+                <p>Face plastic surgeries</p>
+            </div>
+        </div>
+{% endblock %}
+

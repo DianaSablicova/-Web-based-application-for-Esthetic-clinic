@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Personal
+{% endblock %}
+
+{% block main %}
+<div class="about">
+  <h2>About us</h2>
+  <div class="about-info">
+      <div class="text-about">
+          <p>
+            Welcome to A4 Esthetic Clinic, your premier destination for aesthetic excellence. Our clinic is a sanctuary of beauty and transformation, where you'll find a team of dedicated professionals. With a commitment to enhancing your natural allure, we offer a comprehensive range of cutting-edge treatments and surgical procedures, all tailored to your unique desires. Our state-of-the-art facility and unwavering dedication to safety ensure that you can embark on your aesthetic journey with confidence. At A4 Esthetic Clinic, we're here to bring out your inner radiance and help you achieve the best version of yourself.</p>
+        </div>
+      <div class="img-about">
+          <img src="{{ url_for('static', filename='personal.jpg') }}" alt="contact">
+      </div>
+  </div>
+</div>
+
+
+
+
+<h2 class="lol">MEET OUR TEAM:</h2>
+
+<div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="{{ url_for('static', filename='hilda.png') }}"alt="Hilda" style="width:100%">
+        <div class="com">
+          <h3>Hilda Cavill Murphy</h3>
+          <p class="title">Main doctor &amp; Cosmetology</p>
+          <p>Doctor Cavill is a visionary leader in the field of aesthetic medicine, renowned for their exceptional skills and unwavering commitment to enhancing natural beauty with a compassionate approach.</p>
+          <p class="em">hilda.cavill@A4clinic.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="{{ url_for('static', filename='anastasia.png') }}" alt="Annastasia" style="width:100%">
+        <div class="com">
+          <h3>Annastastia Judge</h3>
+          <p class="title">CEO of A4 Esthetic Clinic</p>
+          <p>As the CEO of A4 Esthetic Clinic, Miss.Judge combines her visionary leadership with a passion for enhancing beauty and well-being, driving our clinic to new heights of excellence in aesthetic care.</p>
+          <p class="em">judge@A4clinic.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="{{ url_for('static', filename='lautner.png') }}" alt="Lautner" style="width:100%">
+        <div class="com">
+          <h3>Lautner Costarica</h3>
+          <p class="title">Main Surgeon</p>
+          <p>
+            Our main surgeon, Dr. Costarica, is a highly skilled and trusted expert in aesthetic surgery, known for their meticulous craftsmanship and dedication to delivering stunning, natural-looking results.</p>
+          <p class="em">costarica@A4clinic.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
